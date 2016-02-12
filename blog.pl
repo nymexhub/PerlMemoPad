@@ -53,7 +53,7 @@ $database = "felipe";
 $host = "localhost";
 $username = "felipe";
 # set the password here
-$password = "fldbpw486";
+$password = "";
 #------------------------------------------------------
 
 $data_source = "DBI:mysql:$database:$host";
