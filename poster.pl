@@ -50,7 +50,7 @@ my($database,$host,$data_source,$username,$password,$dbh,$usr_log,$usr_pwd);
 
 $database = "felipe";
 $host = "localhost";
-$username = "felipe"
+$username = "felipe";
 # set the password here;
 $password = "";
 #------------------------------------------------------
