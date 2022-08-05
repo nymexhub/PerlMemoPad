@@ -38,3 +38,5 @@ CREATE TABLE `blog_com` (
   `activo` char(1) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) TYPE=MyISAM AUTO_INCREMENT=24 ;
+
+
