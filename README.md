@@ -1,4 +1,4 @@
-Perl7.0.3x_Miniblog
+Perl Mini Board Loader.
 
 #
 Project about a mini-weblog, you can just publish 
@@ -8,5 +8,6 @@ Online test URL: https://freeshell.de/~felipe/cgi-bin/blog/blog.pl
 #
 
 
+Author: f.alfonso@res-ear.ch
 
-
+#
