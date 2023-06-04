@@ -26,10 +26,9 @@
 #
 ########################################################
 #
-# By Felipe A. Gonzalez
-# E-mail : felipe@nic-nac-project.org (info/bugs)
+# By Computer Science Engineer: Felipe Alfonso Gonzalez 
+# EMail: (f.alfonso@res-ear.ch)
 # Started : Jan 16, 2005
-# Last code-review: Aug 25, 2010
 #
 ########################################################
 #
@@ -136,7 +135,7 @@ my ($c1, $c2 , $c3, $c4, $c5, $k, $sth55);
 #conecion a la base de datos mediante la libreria DBI
 #conection to the db using the DBI library application
 
-#my $dbh=DBI->connect('dbi:mysql:py', 'root', 'fafarafa') ||
+#my $dbh=DBI->connect('dbi:mysql:py', 'root', '') ||
 #my $dbh=DBI->connect('DBI:mysql:database=py;host=sdf.zapto.org','root','') ||
 # die "Error opening database: $DBI::errstr\n";
 $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conectar con $data_source: " . $dbh->errstr . "\n";
@@ -228,7 +227,7 @@ my ($sth5, $date, $subject, $FORM, $submit, $message, $post);
 
 #��������������������������������������
 print "<hr size=1><br>";
-print "<left>Programmed in Perl / MySQL by Felipe Alfonso Gonzalez (felipe\@nic-nac-project.org)</left>";
+print "<left>By Computer Science Engineer: Felipe Alfonso Gonzalez (f.alfonso\@res-ear.ch) - Powered by Perl / MySQL</left>";
 print "</pre>\n";
 
 #���������������������������������������������������������������
