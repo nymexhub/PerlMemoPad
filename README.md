@@ -4,10 +4,8 @@ Perl Mini Board Loader.
 Project about a mini-weblog, you can just publish 
 notes or things like that developed in Perl & Mysql
 #
-Online test URL: https://freeshell.de/~felipe/cgi-bin/blog/blog.pl
-#
-
-
-Author: f.alfonso@res-ear.ch
+By Computer Science Engineer: Felipe Alfonso Gonzalez 
+EMail: (f.alfonso@res-ear.ch)
+Started : Jan 16, 2005
 
 #
