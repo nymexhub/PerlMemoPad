@@ -26,10 +26,9 @@
 #                                                      
 ########################################################
 #                                                    
-# By Felipe A. Gonzalez                               
-# E-mail : felipe@nic-nac-project.org (info/bugs)       
-# Started : Jan 16, 2005              
-# Last code-review: Aug 25, 2010
+# By Computer Science Engineer: Felipe Alfonso Gonzalez 
+# EMail: (f.alfonso@res-ear.ch)
+# Started : Jan 16, 2005
 #                                                     
 ########################################################
 #                                                      
