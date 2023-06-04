@@ -40,6 +40,10 @@
 # IF YOU WANT TO USE IT FOR YOUR OWN DONT FORGET
 # TO MAKE IT EXECTUABLE, (CHMOD +X *.pl) AND TO
 # GIVE IT THE RIGHT PERMISSIONS, (CHMOD 755 *.pl).
+# --
+# INSTALLING DBI ON MAC
+# -
+# sudo cpan Bundle::DBI (USE SUDO)
 ########################################################
 
 ########################################################
@@ -76,7 +80,7 @@ my $cgi=new CGI; #read in parameters
 #looking for a solution
 print "Content-type: text/html\n\n";
 print "<title>Perl Weblog</title>";
-print "<link href=\"http://nic-nac-project.org/~felipe/style_epweblog.css\" rel=\"stylesheet\" type=\"text/css\" >";
+print "<link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" >";
 print "   <link rel=\"icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
 print "      <link rel=\"shortcut icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
 
