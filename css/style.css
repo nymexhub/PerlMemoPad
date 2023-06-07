@@ -1,0 +1,77 @@
+/* 
+
+****************************************
+# By Computer Science Engineer: Felipe Alfonso Gonzalez 
+# EMail: (f.alfonso@res-ear.ch)
+# Started : Jan 16, 2005
+****************************************
+
+*/
+body, div, p, blockquote, ol, ul, dl, li, dt, dd, td
+{
+    font-family: "Courier, Courier New";
+    font-size: 10px;
+}
+.div
+{
+    font-family: "Courier, Courier New";
+    font-size: 10px;
+}
+BODY
+{
+    color: #000000;
+    font-size: 10px;
+}
+
+BODY A:link {
+	text-decoration: underline;
+	color: #000000;
+}
+
+BODY A:active {
+	text-decoration: underline;
+}
+BODY A:visited {
+	text-decoration: line-through;
+	color: #000000;
+}
+
+BODY A:hover {
+	color: black; 
+	background: #f5f5f5;
+}
+
+input.white {
+	background-color: #ffffff; 
+	font-family: "Courier, Courier New";
+	font-size: 10px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	border: 1px solid black;
+}
+
+input {
+	font-family: "Courier, Courier New";
+	font-size: 10px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+textarea.white {
+	background-color: #ffffff; 
+	font-family: "Courier, Courier New";
+	font-size: 10px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	border: 1px solid black;
+	scrollbar-face-color: black; 
+	scrollbar-shadow-color:black; 
+	scrollbar-highlight-color: black; 
+	scrollbar-3dlight-color: black; 
+	scrollbar-darkshadow-color: black; 
+	scrollbar-track-color: #ffffff; 
+	scrollbar-arrow-color: black
+}
