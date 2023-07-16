@@ -1,4 +1,5 @@
-# Perl Mini Board Loader
+# PerlMemoPad
+Perl Mini Board Loader
 Project about a mini-weblog, you can just publish 
 notes or things like that developed in Perl & Mysql
 
