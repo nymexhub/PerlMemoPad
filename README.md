@@ -1,9 +1,9 @@
-MemoPad# PerlMemoPad
+# PerlMemoPad
 Perl Mini Board Loader
 Project about a mini-weblog, you can just publish 
 notes or things like that developed in Perl & Mysql
 
-![Version](https://img.shields.io/github/release/NymexData/Per.svg?style=flat&color=blue)
+![Version](https://img.shields.io/github/release/NymexData/PerlMemoPad.svg?style=flat&color=blue)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
