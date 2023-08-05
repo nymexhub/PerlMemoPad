@@ -2,10 +2,6 @@
 # Felipe Gonzalez Perl Blog - Comments
 
 ########################################################
-# DO NOT REMOVE THIS HEADER                           				
-# Many of the commented lines are in english to        					
-# make it more portable to others possible developers. 					
-########################################################
 #                                                      				
 # COPYRIGHT NOTICE                                 	 			  
 # Copyright 2004 Felipe A. Gonzalez                  
@@ -57,21 +53,17 @@ $password = "root2";
 $data_source = "DBI:mysql:$database:$host";
 
 ########################################################
-#calling the libraries
+#libraries
 
 use CGI;
 use strict;
 use warnings;
 use DBI;
 
-
 #to define the $cgi variable as a paremeter
 my $cgi=new CGI; #read in parameters
-
 #print $cgi->header(); #print a header
 
-#ii tried to find a way to insert a css template
-#looking for a solution
 print "Content-type: text/html\n\n";
 print "<title>PerlMemoPad - Perl Mini Weblog</title>";
 print "<link href=\"./style.css\" rel=\"stylesheet\" type=\"text/css\" >";
@@ -87,12 +79,12 @@ print"         a note: html, is a href=blahblahblah.html target=_blank\n";
 print"            do not use quotation marks.i\n";
 print "            <b>  <a href=\"blog.pl\">GO TO BLOG MAIN PAGE</a></b><br>\n";
 
-#generrating a input box text for search paarameters
+#generating a input box text for search paarameters
 #print "     <br><form method=\"post\" action=\"py.pl?$qs \">";
 #print "<input type=text name=\"qs\">";
 #print "  <input type=\"submit\" value=\"Buscar Noticias\">";
 #print "</center><br>";
-#----- printing sys info
+#sys info
 #my $sys = "system(\"uptime\");";
 #print "<br>$sys<br>";
 #system("uptime");
@@ -100,32 +92,24 @@ print "            <b>  <a href=\"blog.pl\">GO TO BLOG MAIN PAGE</a></b><br>\n";
 print "<br>";
 #----- end
 #print "String de busqueda:<i><b> ", $cgi->param('qs'), "</b></i> .
-# Sus resultados de busqueda fueron:<br>";
-
-###
-#delcaring the vars
+# Results:<br>";
+#
+#variables
 my ($sth, $sth2, $sth3, $a, $b, $c, $d);
 
-#conecion a la base de datos mediante la libreria DBI
 #conection to the db using the DBI library application
-
 #my $dbh=DBI->connect('dbi:mysql:py', 'root', 'fafarafa') ||
 #my $dbh=DBI->connect('DBI:mysql:database=py;host=sdf.zapto.org','root','') ||
 # die "Error opening database: $DBI::errstr\n";
 $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conectar con $data_source: " . $dbh->errstr . "\n";
 
 #$dbh->disconnect || die "Failed to disconnect\n";
-
-#en la siguiente seccin intenare arma un sql con la varinal�e de la url
 #in the following section the intention is to build an sql with post var 
 #$qs = $FORM{'s'};
 #my($qs);
 #if ($FORM{'qs'} eq "$qs") {
-
 #my $qs = $cgi->param('qs');
 #if (my $qs = $cgi->param('qs')) {
-
-
 #}
 #print "$sth\n";
 $sth2=$dbh->prepare("select * from pmpad ORDER BY id DESC;") ||
@@ -133,19 +117,14 @@ $sth2=$dbh->prepare("select * from pmpad ORDER BY id DESC;") ||
 #print "$sth\n";
  $sth2->execute() ||
  die "Couldn't execute query: $DBI::errstr\n";
-
-
 #my ($e);
-
-#i built a boocle to display the reached notices
-#se contruye un bucle par adesplegar las noticias de la db
+#built a boocle to display the reached notices
 
 #my("$a, $b, $c, $d");
-#�����������������time������������������
+
 my($time);
 $time=(localtime(time));
 #print "$time";
-#����������������������������
 	while (($a, $b, $c, $d) = $sth2 ->fetchrow_array) {
 
 	#print "<pre>";
@@ -157,25 +136,20 @@ $time=(localtime(time));
 	#print "    --<a href=\"comment.pl?id=$a#show\"> $c </a>";
 	#print "   <b>$b</b>\n ";
 	#print "  $time\n";
-
 	#print "       </pre>";
 	}
 
 
 
-#declr. vars..
 my ($id, $sth5, $date, $subject, $FORM, $submit, $message, $post);
 #my ($sth5, $date );
 my $id_com = $cgi->param('id');
-
 
 if (my $id = $cgi->param('id')) {
 my($sthy);
 $sthy=$dbh->prepare("select * from pmpad where id like '%$id%' ;") ||
  die "Prepare failed: $DBI::errstr\n";
-
 #print "$sth\n";
-#
 #
 $sthy->execute() ||
   die "Couldn't execute query: $DBI::errstr\n";
@@ -207,13 +181,12 @@ print "Comment: <br><textarea name=message class=white rows=8 cols=28 wrap=virtu
 print "<s><input type=submit class=white value=\"post\"> <input type=reset class=white value=\"reset\"></td></tr></s>";
 print "</table></form></p>";
 
-#inserting the data into the database
+#data into the database
 if (my $id_master = $cgi->param('id_master')) {
-
 
 my $message = $cgi->param('message');
 #my $id_com = $cgi->param('id_master');
-#recogo el id del campo id_master que esta escondida ... >
+#take the  id form the field id_master hidden ... >
 my $subject = $cgi->param('subjet');
 $sth5=$dbh->prepare("INSERT INTO `pmpad_com` ( `id` , `id_iddata` ,`nombre` , `comenta` , `activo` )
 VALUES (
@@ -235,9 +208,7 @@ setTimeout (\"redireccionar()\", 0);
 
 }
 
-
-#......................................................................
-# display for id for any comments
+#display for id for any comments
 #my($id, $sth3);
 if (my $id = $cgi->param('id')) {
 $sth3=$dbh->prepare("select * from pmpad_com where id_iddata like '%$id_com%' ;") ||
@@ -258,17 +229,13 @@ print "<p><br><h3>Comments:</h3><br>";
 	print ("<td>$x</td></tr>\n");
 	print "</table>";
 	#print ("$v\n");
-	print "--------------------------------------------------------------------------<br></font></p>";
+	print "----------------------------------------------------------<br></font></p>";
 	}
 #print "</table>";
 }
 
-print "--------------------------------------------------------------------------\n";
+print "--------------------------------------------------------------\n";
 print"<left>Programmed in Perl / MySQL by Felipe Gonzalez (felipe\@nic-nac-project.de)</left>";
 print "</pre>\n";
 
 print $cgi->end_html();
-
-
-#end of the script code
-
