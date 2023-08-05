@@ -11,6 +11,11 @@ PerlMemoPad is a project focused on developing a mini-weblog using Perl and MySQ
 - Publish and manage notes and content easily.
 - Utilizes Perl and MySQL for backend functionality.
 
+#### Packages needed
+
+> https://archlinux.org/packages/extra/x86_64/perl-dbd-mysql/
+
+> https://aur.archlinux.org/packages/mod_perl
 #### License
 
 #### MIT License

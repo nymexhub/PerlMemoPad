@@ -54,9 +54,9 @@ my($database,$host,$data_source,$username,$password,$dbh,$usr_log,$usr_pwd);
 
 $database = "felipe";
 $host = "localhost";
-$username = "felipe";
+$username = "root2";
 # set the password here
-$password = "";
+$password = "root2";
 #------------------------------------------------------
 
 $data_source = "DBI:mysql:$database:$host";
@@ -75,14 +75,12 @@ my $cgi=new CGI; #read in parameters
 
 #print $cgi->header(); #print a header
 
-#ii tried to find a way to insert a css template
-#he intentado insertar un template css con un link...
-#looking for a solution
+#tried to find a way to insert a css template
 print "Content-type: text/html\n\n";
-print "<title>Perl Weblog</title>";
-print "<link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" >";
-print "   <link rel=\"icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
-print "      <link rel=\"shortcut icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
+print "<title>PerlMemoPad - Perl Mini Weblog</title>";
+print "<link href=\"./style.css\" rel=\"stylesheet\" type=\"text/css\" >";
+print "   <link rel=\"icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
+print "      <link rel=\"shortcut icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
 
 #print "<script type=\"text/javascript\" language=\"javascript\" src=\"js.js\"></script>";
 
@@ -163,7 +161,7 @@ $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conect
 
 
 #��������������������
-$sth2=$dbh->prepare("select * from blog ORDER BY id DESC;") ||
+$sth2=$dbh->prepare("select * from pmpad ORDER BY id DESC;") ||
  die "Prepare failed: $DBI::errstr\n";
 
 #print "$sth\n";
@@ -197,7 +195,7 @@ while (($a, $b, $c, $d) = $sth2 ->fetchrow_array) {
 #print "    --<a href=\"comment.pl?id=$a\"> $c </a>";
 #print $c;
 print $c;
-$sth55=$dbh->prepare("SELECT COUNT(0) FROM blog_com where id_iddata ='$a'") ||
+$sth55=$dbh->prepare("SELECT COUNT(0) FROM pmpad_com where id_iddata ='$a'") ||
  die "Prepare failed: $DBI::errstr\n";
 
 $sth55->execute() ||
@@ -240,7 +238,7 @@ print "</pre>\n";
 #my($id, $sth3);
 if (my $id = $cgi->param('id')) {
 
-$sth3=$dbh->prepare("select * from blog where id like '%$id%' ;") ||
+$sth3=$dbh->prepare("select * from pmpad where id like '%$id%' ;") ||
  die "Prepare failed: $DBI::errstr\n";
 
 

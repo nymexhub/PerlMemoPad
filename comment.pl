@@ -50,9 +50,9 @@ my($database,$host,$data_source,$username,$password,$dbh);
 
 $database = "felipe";
 $host = "localhost";
-$username = "felipe";
+$username = "root2";
 # set the password here
-$password = "";
+$password = "root2";
 #------------------------------------------------------
 $data_source = "DBI:mysql:$database:$host";
 
@@ -73,10 +73,10 @@ my $cgi=new CGI; #read in parameters
 #ii tried to find a way to insert a css template
 #looking for a solution
 print "Content-type: text/html\n\n";
-print "<title>Perl Weblog</title>";
-print "<link href=\"http://nic-nac-project.org/~felipe/style_epweblog.css\" rel=\"stylesheet\" type=\"text/css\" >";
-print "   <link rel=\"icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
-print "      <link rel=\"shortcut icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
+print "<title>PerlMemoPad - Perl Mini Weblog</title>";
+print "<link href=\"./style.css\" rel=\"stylesheet\" type=\"text/css\" >";
+print "   <link rel=\"icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
+print "      <link rel=\"shortcut icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
 
 my ($qs);
 my $version = "1.1";
@@ -128,7 +128,7 @@ $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conect
 
 #}
 #print "$sth\n";
-$sth2=$dbh->prepare("select * from blog ORDER BY id DESC;") ||
+$sth2=$dbh->prepare("select * from pmpad ORDER BY id DESC;") ||
  die "Prepare failed: $DBI::errstr\n";
 #print "$sth\n";
  $sth2->execute() ||
@@ -171,7 +171,7 @@ my $id_com = $cgi->param('id');
 
 if (my $id = $cgi->param('id')) {
 my($sthy);
-$sthy=$dbh->prepare("select * from blog where id like '%$id%' ;") ||
+$sthy=$dbh->prepare("select * from pmpad where id like '%$id%' ;") ||
  die "Prepare failed: $DBI::errstr\n";
 
 #print "$sth\n";
@@ -215,7 +215,7 @@ my $message = $cgi->param('message');
 #my $id_com = $cgi->param('id_master');
 #recogo el id del campo id_master que esta escondida ... >
 my $subject = $cgi->param('subjet');
-$sth5=$dbh->prepare("INSERT INTO `blog_com` ( `id` , `id_iddata` ,`nombre` , `comenta` , `activo` )
+$sth5=$dbh->prepare("INSERT INTO `pmpad_com` ( `id` , `id_iddata` ,`nombre` , `comenta` , `activo` )
 VALUES (
 '', '$id_master', '$subject', '$message', '0'
 );") ||
@@ -240,7 +240,7 @@ setTimeout (\"redireccionar()\", 0);
 # display for id for any comments
 #my($id, $sth3);
 if (my $id = $cgi->param('id')) {
-$sth3=$dbh->prepare("select * from blog_com where id_iddata like '%$id_com%' ;") ||
+$sth3=$dbh->prepare("select * from pmpad_com where id_iddata like '%$id_com%' ;") ||
  die "Prepare failed: $DBI::errstr\n";
 #print "$sth\n";
 $sth3->execute() ||
