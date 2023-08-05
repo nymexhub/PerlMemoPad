@@ -49,9 +49,9 @@ my($database,$host,$data_source,$username,$password,$dbh,$usr_log,$usr_pwd);
 
 $database = "felipe";
 $host = "localhost";
-$username = "felipe";
+$username = "root2";
 # set the password here;
-$password = "";
+$password = "root2";
 #------------------------------------------------------
 $data_source = "DBI:mysql:$database:$host";
 
@@ -74,10 +74,10 @@ my $cgi=new CGI; #read in parameters
 #he intentado insertar un template css con un link...
 #looking for a solution
 print "Content-type: text/html\n\n";
-print "<title>Perl Weblog</title>";
-print "<link href=\"http://nic-nac-project.org/~felipe/style_epweblog.css\" rel=\"stylesheet\" type=\"text/css\" >";
-print "   <link rel=\"icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
-print "      <link rel=\"shortcut icon\" href=\"../favicon.ico\" type=\"image/ico\" > ";
+print "<title>PerlMemoPad - Perl Mini Weblog</title>";
+print "<link href=\"./style.css\" rel=\"stylesheet\" type=\"text/css\" >";
+print "   <link rel=\"icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
+print "      <link rel=\"shortcut icon\" href=\"./favicon.ico\" type=\"image/ico\" > ";
 
 #print "<script type=\"text/javascript\" language=\"javascript\" src=\"js.js\"></script>";
 
@@ -157,7 +157,7 @@ $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conect
 
 
 #��������������������
-$sth2=$dbh->prepare("select * from blog ORDER BY id DESC;") ||
+$sth2=$dbh->prepare("select * from pmpad ORDER BY id DESC;") ||
  die "Prepare failed: $DBI::errstr\n";
 
 
@@ -214,7 +214,7 @@ my $message = $cgi->param('message');
 my($time);
 $time=(localtime(time));
 #print "$time";
-$sth5=$dbh->prepare("INSERT INTO `blog` ( `id` , `date` , `pre_note` , `note` )
+$sth5=$dbh->prepare("INSERT INTO `pmpad` ( `id` , `date` , `pre_note` , `note` )
 VALUES (
 '', '$time', '$subject', '$message'
 );") ||
@@ -246,7 +246,7 @@ print "</pre>\n";
 #my($id, $sth3);
 if (my $id = $cgi->param('id')) {
 
-$sth3=$dbh->prepare("select * from blog where id like '%$id%' ;") ||
+$sth3=$dbh->prepare("select * from pmpad where id like '%$id%' ;") ||
  die "Prepare failed: $DBI::errstr\n";
  
 

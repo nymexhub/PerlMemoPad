@@ -16,7 +16,7 @@
 -- Table structure for table `blog`
 -- 
 
-CREATE TABLE `blog` (
+CREATE TABLE `pmpad` (
   `id` int(11) NOT NULL auto_increment,
   `date` varchar(18) NOT NULL default '',
   `pre_note` longtext NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `blog` (
 -- Table structure for table `blog_com`
 -- 
 
-CREATE TABLE `blog_com` (
+CREATE TABLE `pmpad_com` (
   `id` int(11) NOT NULL auto_increment,
   `id_iddata` int(11) NOT NULL default '0',
   `nombre` varchar(100) NOT NULL default '',
