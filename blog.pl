@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Felipe Gonzalez Perl Blog Admin
+# Felipe Gonzalez Memo - Perl Blog
 
 ########################################################
 #
@@ -122,8 +122,8 @@ my ($sth, $sth2, $sth3, $a, $b, $c, $d);
 my ($c1, $c2 , $c3, $c4, $c5, $k, $sth55);
 
 #conection to the db using the DBI library application
-#my $dbh=DBI->connect('dbi:mysql:py', 'root', '') ||
-#my $dbh=DBI->connect('DBI:mysql:database=py;host=sdf.zapto.org','root','') ||
+#my $dbh=DBI->connect('dbi:mysql:py', 'root2', 'root2') ||
+#my $dbh=DBI->connect('DBI:mysql:database=py;host=localhost','root2','root2') ||
 # die "Error opening database: $DBI::errstr\n";
 $dbh = DBI->connect($data_source, $username, $password) or die "Imposible conectar con $data_source: " . $dbh->errstr . "\n";
 
